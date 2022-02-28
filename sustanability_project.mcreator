@@ -1,0 +1,42 @@
+{
+  "mod_elements": [
+    {
+      "name": "AddingToGlobalWarming",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "adding_to_global_warming",
+      "metadata": {
+        "dependencies": []
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {}
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "sustanability_project",
+    "modName": "Sustanability Project",
+    "version": "1.0.0",
+    "author": "nharr, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.17.1",
+    "modElementsPackage": "net.mcreator.sustanabilityproject",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100354000
+}
