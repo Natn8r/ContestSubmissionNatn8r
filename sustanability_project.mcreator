@@ -199,6 +199,58 @@
           }
         ]
       }
+    },
+    {
+      "name": "WaterRising",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "water_rising",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetWaterLevelCommandExecuted",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_water_level_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "cmdparams",
+            "type": "map"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SetWaterLevel",
+      "type": "command",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_water_level"
     }
   ],
   "variable_elements": [
