@@ -1,0 +1,96 @@
+{
+  "_fv": 24,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "level1.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ShowCarbonGuide1"
+          },
+          "name": "level1.png",
+          "x": 306,
+          "y": 220
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "level2.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ShowCarbonGuide2"
+          },
+          "name": "level2.png",
+          "x": 306,
+          "y": 219
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "level3.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ShowCarbonGuide3"
+          },
+          "name": "level3.png",
+          "x": 306,
+          "y": 219
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "level4.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ShowCarbonGuide4"
+          },
+          "name": "level4.png",
+          "x": 306,
+          "y": 219
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "level5.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ShowCarbonGuide5"
+          },
+          "name": "level5.png",
+          "x": 306,
+          "y": 219
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "level6.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "ShowCarbonGuide6"
+          },
+          "name": "level6.png",
+          "x": 306,
+          "y": 219
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

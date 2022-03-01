@@ -33,13 +33,15 @@ public class GlobalWarmingFireDetectionProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
+		boolean found = false;
+		boolean killswitch = false;
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
 		double lastsecond = 0;
-		boolean found = false;
-		boolean killswitch = false;
+		double firesfound = 0;
 		if (entity.getPersistentData().getBoolean("fireupdate") && 30 == Calendar.getInstance().get(Calendar.SECOND)) {
+			firesfound = 0;
 			sx = -50;
 			found = false;
 			for (int index0 = 0; index0 < (int) (100); index0++) {
@@ -51,6 +53,7 @@ public class GlobalWarmingFireDetectionProcedure {
 								|| (world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz))))
 										.getBlock() == Blocks.CAMPFIRE) {
 							found = true;
+							firesfound = firesfound + 1;
 						}
 						sz = sz + 1;
 					}
@@ -59,7 +62,8 @@ public class GlobalWarmingFireDetectionProcedure {
 				sx = sx + 1;
 			}
 			if (found == true) {
-				SustanabilityProjectModVariables.MapVariables.get(world).waterlevel = sx + 0.5;
+				SustanabilityProjectModVariables.MapVariables
+						.get(world).waterlevel = SustanabilityProjectModVariables.MapVariables.get(world).waterlevel + firesfound / 20;
 				SustanabilityProjectModVariables.MapVariables.get(world).syncData(world);
 			}
 		}
