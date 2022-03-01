@@ -1,0 +1,166 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 414,
+    "height": 226,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": true,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Welcome to",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Welcome to",
+          "x": 96,
+          "y": 17
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Environmentally Aware",
+          "color": {
+            "value": -16777012,
+            "falpha": 0.0
+          },
+          "name": "Environmentally Aware",
+          "x": 159,
+          "y": 17
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Minecraft!",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Minecraft!",
+          "x": 276,
+          "y": 17
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "In this verison of Minecraft, you have to be very careful about your ",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "In this verison of Minecraft, you have to be very careful about your ",
+          "x": 42,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "surroundings. Everything you do in the real world affects our environment,",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "surroundings. Everything you do in the real world affects our environment,",
+          "x": 24,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "so everything you do in this game affects your environment as well.",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "so everything you do in this game affects your environment as well.",
+          "x": 33,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Next",
+          "onClick": {
+            "name": "Guionenextclicked"
+          },
+          "width": 46,
+          "height": 20,
+          "name": "Next",
+          "x": 348,
+          "y": 188
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Everything you do from lighting a fire to killing a cow can cause Carbon",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Everything you do from lighting a fire to killing a cow can cause Carbon",
+          "x": 24,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": " Dioxide Gas to leak into the atmosphere, keeping heat from the sun",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": " Dioxide Gas to leak into the atmosphere, keeping heat from the sun",
+          "x": 33,
+          "y": 134
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": " inside the world's atmosphere, causing the world's ice caps to melt",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": " inside the world's atmosphere, causing the world's ice caps to melt",
+          "x": 33,
+          "y": 152
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "and in turn raising the sea level for the world.",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "and in turn raising the sea level for the world.",
+          "x": 78,
+          "y": 170
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}
