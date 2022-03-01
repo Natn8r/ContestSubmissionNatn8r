@@ -36,6 +36,8 @@ import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SustanabilityProjectModVariables {
+	public static boolean killswitch = true;
+
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
 		SustanabilityProjectMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new,
