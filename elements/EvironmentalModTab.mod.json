@@ -1,0 +1,11 @@
+{
+  "_fv": 24,
+  "_type": "tab",
+  "definition": {
+    "name": "The Evironmental Mod",
+    "icon": {
+      "value": "Blocks.SAPLING#0"
+    },
+    "showSearch": false
+  }
+}

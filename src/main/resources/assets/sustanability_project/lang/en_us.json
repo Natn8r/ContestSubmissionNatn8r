@@ -1,1 +1,6 @@
-{}
+{
+  "item.sustanability_project.wind_mill": "Modern Wind Mill",
+  "block.sustanability_project.modern_windmill_base": "Modern Windmill Base",
+  "itemGroup.tabevironmental_mod_tab": "The Evironmental Mod",
+  "block.sustanability_project.modern_windmill_top": "Modern Windmill Top"
+}
