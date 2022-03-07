@@ -16,10 +16,12 @@ import net.mcreator.sustanabilityproject.init.SustanabilityProjectModBlocks;
 
 public abstract class OilFluid extends ForgeFlowingFluid {
 	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> SustanabilityProjectModFluids.OIL,
-			() -> SustanabilityProjectModFluids.FLOWING_OIL, FluidAttributes.builder(new ResourceLocation("sustanability_project:blocks/oilstill"),
+			() -> SustanabilityProjectModFluids.FLOWING_OIL, FluidAttributes.builder(new ResourceLocation("sustanability_project:blocks/oilstand"),
 					new ResourceLocation("sustanability_project:blocks/oilflow"))
 
 	).explosionResistance(100f)
+
+			.tickRate(30)
 
 			.bucket(() -> SustanabilityProjectModItems.OIL_BUCKET).block(() -> (LiquidBlock) SustanabilityProjectModBlocks.OIL);
 

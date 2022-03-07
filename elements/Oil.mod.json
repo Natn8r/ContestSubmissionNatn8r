@@ -4,11 +4,11 @@
   "definition": {
     "name": "Oil",
     "bucketName": "Oil Bucket",
-    "textureStill": "oilstill",
+    "textureStill": "oilstand",
     "textureFlowing": "oilflow",
     "tintType": "No tint",
     "canMultiply": false,
-    "flowRate": 5,
+    "flowRate": 30,
     "levelDecrease": 1,
     "slopeFindDistance": 4,
     "spawnParticles": false,
