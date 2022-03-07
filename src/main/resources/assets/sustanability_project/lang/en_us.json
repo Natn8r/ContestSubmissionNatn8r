@@ -1,6 +1,9 @@
 {
+  "fluid.sustanability_project.oil": "Oil",
+  "block.sustanability_project.oil": "Oil",
   "item.sustanability_project.wind_mill": "Modern Wind Mill",
   "block.sustanability_project.modern_windmill_base": "Modern Windmill Base",
+  "item.sustanability_project.oil_bucket": "Oil Bucket",
   "itemGroup.tabevironmental_mod_tab": "The Evironmental Mod",
   "block.sustanability_project.modern_windmill_top": "Modern Windmill Top"
 }

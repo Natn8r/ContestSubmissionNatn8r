@@ -14,6 +14,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.BlockItem;
 
 import net.mcreator.sustanabilityproject.item.WindMillItem;
+import net.mcreator.sustanabilityproject.item.OilItem;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class SustanabilityProjectModItems {
 	public static final Item MODERN_WINDMILL_BASE = register(SustanabilityProjectModBlocks.MODERN_WINDMILL_BASE, null);
 	public static final Item WIND_MILL = register(new WindMillItem());
 	public static final Item MODERN_WINDMILL_TOP = register(SustanabilityProjectModBlocks.MODERN_WINDMILL_TOP, null);
+	public static final Item OIL_BUCKET = register(new OilItem());
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);

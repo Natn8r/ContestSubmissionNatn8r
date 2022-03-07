@@ -553,6 +553,17 @@
           }
         ]
       }
+    },
+    {
+      "name": "Oil",
+      "type": "fluid",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "oil",
+      "metadata": {
+        "gb": true
+      }
     }
   ],
   "variable_elements": [
@@ -578,8 +589,11 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "fluid.sustanability_project.oil": "Oil",
+      "block.sustanability_project.oil": "Oil",
       "item.sustanability_project.wind_mill": "Modern Wind Mill",
       "block.sustanability_project.modern_windmill_base": "Modern Windmill Base",
+      "item.sustanability_project.oil_bucket": "Oil Bucket",
       "itemGroup.tabevironmental_mod_tab": "The Evironmental Mod",
       "block.sustanability_project.modern_windmill_top": "Modern Windmill Top"
     }
