@@ -26,6 +26,16 @@ public class SustanabilityProjectModItems {
 	public static final Item WIND_MILL = register(new WindMillItem());
 	public static final Item MODERN_WINDMILL_TOP = register(SustanabilityProjectModBlocks.MODERN_WINDMILL_TOP, null);
 	public static final Item OIL_BUCKET = register(new OilItem());
+	public static final Item OLDWINDMILLTOP_1 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_1,
+			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
+	public static final Item OLDWINDMILLTOP_2 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_2,
+			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
+	public static final Item OLD_WINDMILLTOP_3 = register(SustanabilityProjectModBlocks.OLD_WINDMILLTOP_3,
+			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
+	public static final Item OLDWINDMILLTOP_4 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_4,
+			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
+	public static final Item OLDWINDMILLBOTTOM = register(SustanabilityProjectModBlocks.OLDWINDMILLBOTTOM,
+			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);

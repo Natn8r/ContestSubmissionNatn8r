@@ -1,0 +1,9 @@
+{
+  "parent": "sustanability_project:custom/oldwindmillbottom",
+  "textures": {
+    "all": "sustanability_project:blocks/oldwindmillbottom",
+    "particle": "sustanability_project:blocks/oldwindmillbottom",
+    "5": "sustanability_project:blocks/oldwindmillbottom",
+    "missing": "sustanability_project:blocks/oldwindmillbottom"
+  }
+}

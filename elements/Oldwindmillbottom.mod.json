@@ -2,48 +2,48 @@
   "_fv": 24,
   "_type": "block",
   "definition": {
-    "texture": "modernwindmilltop",
+    "texture": "oldwindmillbottom",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
     "textureRight": "",
     "textureBack": "",
     "renderType": 2,
-    "customModelName": "windmillanimated:default",
+    "customModelName": "oldwindmillbottom:default",
     "rotationMode": 1,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "",
     "particleTexture": "",
     "tintType": "No tint",
-    "isItemTinted": true,
+    "isItemTinted": false,
     "hasTransparency": true,
     "connectedSides": false,
     "transparencyType": "SOLID",
     "disableOffset": false,
     "boundingBoxes": [
       {
-        "mx": 6.0,
+        "mx": 0.0,
         "my": 0.0,
-        "mz": 6.0,
-        "Mx": 10.0,
-        "My": 12.0,
-        "Mz": 10.0,
+        "mz": 0.0,
+        "Mx": 16.0,
+        "My": 32.0,
+        "Mz": 16.0,
         "subtract": false
       }
     ],
-    "name": "Modern Windmill Top",
+    "name": "Oldwindmillbottom",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "CUSTOM:EvironmentalModTab"
     },
     "destroyTool": "Not specified",
     "customDrop": {
-      "value": "Blocks.AIR"
+      "value": ""
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -52,7 +52,7 @@
     "canRedstoneConnect": false,
     "lightOpacity": 0,
     "material": {
-      "value": "IRON"
+      "value": "ROCK"
     },
     "tickRate": 10,
     "tickRandomly": false,
@@ -77,7 +77,7 @@
     "isNotColidable": false,
     "isCustomSoundType": false,
     "soundOnStep": {
-      "value": "METAL"
+      "value": "WOOD"
     },
     "breakSound": {
       "value": ""
@@ -105,30 +105,24 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "<NONE>",
-    "openGUIOnRightClick": false,
+    "guiBoundTo": "WindmillGui",
+    "openGUIOnRightClick": true,
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
     "inventoryOutSlotIDs": [],
     "inventoryInSlotIDs": [],
-    "hasEnergyStorage": false,
+    "hasEnergyStorage": true,
     "energyInitial": 0,
-    "energyCapacity": 400000,
-    "energyMaxReceive": 200,
+    "energyCapacity": 700000,
+    "energyMaxReceive": 700000,
     "energyMaxExtract": 200,
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onNeighbourBlockChanges": {
-      "name": "ModernWindmillTopUpdateTick"
-    },
     "onTickUpdate": {
-      "name": "ModernWindmillTopUpdateTick"
-    },
-    "onDestroyedByPlayer": {
-      "name": "ModernWindmillTopBlockDestroyedByPlayer"
+      "name": "OldwindmillbottomUpdateTick"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

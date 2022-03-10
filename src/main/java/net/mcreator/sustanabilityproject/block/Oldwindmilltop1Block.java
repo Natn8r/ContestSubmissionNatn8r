@@ -4,12 +4,8 @@ package net.mcreator.sustanabilityproject.block;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
@@ -20,14 +16,12 @@ import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerLevel;
@@ -36,26 +30,25 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
-import net.mcreator.sustanabilityproject.procedures.ModernWindmillTopUpdateTickProcedure;
-import net.mcreator.sustanabilityproject.procedures.ModernWindmillTopBlockDestroyedByPlayerProcedure;
+import net.mcreator.sustanabilityproject.procedures.OldwindmilltopUpdateTickProcedure;
 import net.mcreator.sustanabilityproject.init.SustanabilityProjectModBlocks;
-import net.mcreator.sustanabilityproject.block.entity.ModernWindmillTopBlockEntity;
+import net.mcreator.sustanabilityproject.block.entity.Oldwindmilltop1BlockEntity;
 
 import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
-public class ModernWindmillTopBlock extends Block
+public class Oldwindmilltop1Block extends Block
 		implements
 
 			EntityBlock {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-	public ModernWindmillTopBlock() {
-		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(1f, 10f).noOcclusion()
+	public Oldwindmilltop1Block() {
+		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(1f, 10f).noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
-		setRegistryName("modern_windmill_top");
+		setRegistryName("oldwindmilltop_1");
 	}
 
 	@Override
@@ -66,22 +59,6 @@ public class ModernWindmillTopBlock extends Block
 	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		Vec3 offset = state.getOffset(world, pos);
-		switch ((Direction) state.getValue(FACING)) {
-			case SOUTH :
-			default :
-				return box(6, 0, 6, 10, 12, 10).move(offset.x, offset.y, offset.z);
-			case NORTH :
-				return box(6, 0, 6, 10, 12, 10).move(offset.x, offset.y, offset.z);
-			case EAST :
-				return box(6, 0, 6, 10, 12, 10).move(offset.x, offset.y, offset.z);
-			case WEST :
-				return box(6, 0, 6, 10, 12, 10).move(offset.x, offset.y, offset.z);
-		}
 	}
 
 	@Override
@@ -108,7 +85,7 @@ public class ModernWindmillTopBlock extends Block
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
-		return Collections.singletonList(new ItemStack(Blocks.AIR));
+		return Collections.singletonList(new ItemStack(this, 1));
 	}
 
 	@Override
@@ -118,27 +95,14 @@ public class ModernWindmillTopBlock extends Block
 	}
 
 	@Override
-	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
-		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		ModernWindmillTopUpdateTickProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
-	}
-
-	@Override
 	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, Random random) {
 		super.tick(blockstate, world, pos, random);
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
 
-		ModernWindmillTopUpdateTickProcedure.execute(world, x, y, z);
+		OldwindmilltopUpdateTickProcedure.execute(world, x, y, z);
 		world.getBlockTicks().scheduleTick(pos, this, 10);
-	}
-
-	@Override
-	public boolean removedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
-		boolean retval = super.removedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		ModernWindmillTopBlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
-		return retval;
 	}
 
 	@Override
@@ -149,7 +113,7 @@ public class ModernWindmillTopBlock extends Block
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return new ModernWindmillTopBlockEntity(pos, state);
+		return new Oldwindmilltop1BlockEntity(pos, state);
 	}
 
 	@Override
@@ -163,7 +127,7 @@ public class ModernWindmillTopBlock extends Block
 	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof ModernWindmillTopBlockEntity be) {
+			if (blockEntity instanceof Oldwindmilltop1BlockEntity be) {
 				Containers.dropContents(world, pos, be);
 				world.updateNeighbourForOutputSignal(pos, this);
 			}
@@ -179,7 +143,7 @@ public class ModernWindmillTopBlock extends Block
 	@Override
 	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
-		if (tileentity instanceof ModernWindmillTopBlockEntity be)
+		if (tileentity instanceof Oldwindmilltop1BlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);
 		else
 			return 0;
@@ -187,6 +151,6 @@ public class ModernWindmillTopBlock extends Block
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(SustanabilityProjectModBlocks.MODERN_WINDMILL_TOP, renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(SustanabilityProjectModBlocks.OLDWINDMILLTOP_1, renderType -> renderType == RenderType.cutout());
 	}
 }

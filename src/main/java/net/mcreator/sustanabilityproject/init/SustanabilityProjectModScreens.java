@@ -11,6 +11,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 
+import net.mcreator.sustanabilityproject.client.gui.WindmillGuiScreen;
 import net.mcreator.sustanabilityproject.client.gui.Gui2Screen;
 import net.mcreator.sustanabilityproject.client.gui.Gui1Screen;
 
@@ -21,6 +22,7 @@ public class SustanabilityProjectModScreens {
 		event.enqueueWork(() -> {
 			MenuScreens.register(SustanabilityProjectModMenus.GUI_1, Gui1Screen::new);
 			MenuScreens.register(SustanabilityProjectModMenus.GUI_2, Gui2Screen::new);
+			MenuScreens.register(SustanabilityProjectModMenus.WINDMILL_GUI, WindmillGuiScreen::new);
 		});
 	}
 }

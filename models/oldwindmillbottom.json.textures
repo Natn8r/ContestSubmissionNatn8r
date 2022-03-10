@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "5": "oldwindmillbottom",
+        "missing": "oldwindmillbottom"
+      },
+      "name": "default"
+    }
+  }
+}

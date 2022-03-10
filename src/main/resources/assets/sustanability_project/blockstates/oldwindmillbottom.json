@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "sustanability_project:block/oldwindmillbottom"
+    },
+    "facing=east": {
+      "model": "sustanability_project:block/oldwindmillbottom",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "sustanability_project:block/oldwindmillbottom",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sustanability_project:block/oldwindmillbottom",
+      "y": 270
+    }
+  }
+}
