@@ -35,6 +35,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.Minecraft;
 
 import net.mcreator.sustanabilityproject.procedures.ModernWindmillBaseUpdateTickProcedure;
 import net.mcreator.sustanabilityproject.procedures.ModernWindmillBaseBlockDestroyedByPlayerProcedure;
@@ -119,12 +120,6 @@ public class ModernWindmillBaseBlock extends Block
 	}
 
 	@Override
-	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
-		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
-		ModernWindmillBaseBlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
-	}
-
-	@Override
 	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, Random random) {
 		super.tick(blockstate, world, pos, random);
 		int x = pos.getX();
@@ -133,6 +128,18 @@ public class ModernWindmillBaseBlock extends Block
 
 		ModernWindmillBaseUpdateTickProcedure.execute(world, x, y, z);
 		world.getBlockTicks().scheduleTick(pos, this, 10);
+	}
+
+	@OnlyIn(Dist.CLIENT)
+	@Override
+	public void animateTick(BlockState blockstate, Level world, BlockPos pos, Random random) {
+		super.animateTick(blockstate, world, pos, random);
+		Player entity = Minecraft.getInstance().player;
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+
+		ModernWindmillBaseUpdateTickProcedure.execute(world, x, y, z);
 	}
 
 	@Override

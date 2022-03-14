@@ -75,7 +75,7 @@ public class WindmillGuiMenu extends AbstractContainerMenu implements Supplier<M
 				}
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 106, 35) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 76, 60) {
 		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)

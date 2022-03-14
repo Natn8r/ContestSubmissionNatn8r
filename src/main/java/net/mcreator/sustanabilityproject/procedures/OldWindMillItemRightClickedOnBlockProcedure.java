@@ -5,6 +5,7 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +18,9 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.sustanabilityproject.init.SustanabilityProjectModBlocks;
 
-public class WindMillRightClickedOnBlockProcedure {
+import java.util.Map;
+
+public class OldWindMillItemRightClickedOnBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
@@ -27,8 +30,34 @@ public class WindMillRightClickedOnBlockProcedure {
 		} else {
 			playersdirection = entity.getDirection();
 		}
-		world.setBlock(new BlockPos((int) x, (int) (y + 1), (int) z), SustanabilityProjectModBlocks.MODERN_WINDMILL_BASE.defaultBlockState(), 3);
-		world.setBlock(new BlockPos((int) x, (int) (y + 3), (int) z), SustanabilityProjectModBlocks.MODERN_WINDMILL_TOP.defaultBlockState(), 3);
+		{
+			BlockPos _bp = new BlockPos((int) x, (int) (y + 1), (int) z);
+			BlockState _bs = SustanabilityProjectModBlocks.OLDWINDMILLBOTTOM.defaultBlockState();
+			BlockState _bso = world.getBlockState(_bp);
+			for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+				Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+				if (_property != null && _bs.getValue(_property) != null)
+					try {
+						_bs = _bs.setValue(_property, (Comparable) entry.getValue());
+					} catch (Exception e) {
+					}
+			}
+			world.setBlock(_bp, _bs, 3);
+		}
+		{
+			BlockPos _bp = new BlockPos((int) x, (int) (y + 3), (int) z);
+			BlockState _bs = SustanabilityProjectModBlocks.OLDWINDMILLTOP_1.defaultBlockState();
+			BlockState _bso = world.getBlockState(_bp);
+			for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+				Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+				if (_property != null && _bs.getValue(_property) != null)
+					try {
+						_bs = _bs.setValue(_property, (Comparable) entry.getValue());
+					} catch (Exception e) {
+					}
+			}
+			world.setBlock(_bp, _bs, 3);
+		}
 		{
 			Direction _dir = (playersdirection.getOpposite());
 			BlockPos _pos = new BlockPos((int) x, (int) (y + 1), (int) z);
@@ -68,5 +97,11 @@ public class WindMillRightClickedOnBlockProcedure {
 		}.checkGamemode(entity))) {
 			((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).shrink(1);
 		}
+		if (world instanceof Level _level)
+			_level.updateNeighborsAt(new BlockPos((int) x, (int) (y + 1), (int) z),
+					_level.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z)).getBlock());
+		if (world instanceof Level _level)
+			_level.updateNeighborsAt(new BlockPos((int) x, (int) (y + 3), (int) z),
+					_level.getBlockState(new BlockPos((int) x, (int) (y + 3), (int) z)).getBlock());
 	}
 }

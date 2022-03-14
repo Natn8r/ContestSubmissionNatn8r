@@ -121,7 +121,13 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onRightClicked": {
+      "name": "OldwindmillbottomOnBlockRightClicked"
+    },
     "onTickUpdate": {
+      "name": "OldwindmillbottomUpdateTick"
+    },
+    "onRandomUpdateEvent": {
       "name": "OldwindmillbottomUpdateTick"
     },
     "spawnWorldTypes": [],

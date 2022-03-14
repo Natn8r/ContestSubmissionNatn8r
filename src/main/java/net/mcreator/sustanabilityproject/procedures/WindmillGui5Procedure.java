@@ -4,7 +4,6 @@ import net.minecraftforge.energy.CapabilityEnergy;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.core.BlockPos;
 
@@ -22,13 +21,8 @@ public class WindmillGui5Procedure {
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
 				return _retval.get();
 			}
-		}.getEnergyStored(world, new BlockPos(
-				(int) (entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(7)),
-						ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
-				(int) (entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(7)),
-						ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY()),
-				(int) (entity.level.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(7)),
-						ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())))
+		}.getEnergyStored(world, new BlockPos((int) (entity.getPersistentData().getDouble("hitx")),
+				(int) (entity.getPersistentData().getDouble("hity")), (int) (entity.getPersistentData().getDouble("hitz"))))
 				&& 500000 > new Object() {
 					public int getEnergyStored(LevelAccessor level, BlockPos pos) {
 						AtomicInteger _retval = new AtomicInteger(0);
@@ -37,19 +31,8 @@ public class WindmillGui5Procedure {
 							_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
 						return _retval.get();
 					}
-				}.getEnergyStored(world, new BlockPos(
-						(int) (entity.level
-								.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(7)),
-										ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
-								.getBlockPos().getX()),
-						(int) (entity.level
-								.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(7)),
-										ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
-								.getBlockPos().getY()),
-						(int) (entity.level
-								.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(7)),
-										ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity))
-								.getBlockPos().getZ())))) {
+				}.getEnergyStored(world, new BlockPos((int) (entity.getPersistentData().getDouble("hitx")),
+						(int) (entity.getPersistentData().getDouble("hity")), (int) (entity.getPersistentData().getDouble("hitz"))))) {
 			return true;
 		}
 		return false;

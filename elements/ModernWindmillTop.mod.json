@@ -121,10 +121,10 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onNeighbourBlockChanges": {
+    "onTickUpdate": {
       "name": "ModernWindmillTopUpdateTick"
     },
-    "onTickUpdate": {
+    "onRandomUpdateEvent": {
       "name": "ModernWindmillTopUpdateTick"
     },
     "onDestroyedByPlayer": {

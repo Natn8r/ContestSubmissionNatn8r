@@ -39,7 +39,7 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:EvironmentalModTab"
+      "value": "No creative tab entry"
     },
     "destroyTool": "Not specified",
     "customDrop": {
@@ -122,6 +122,9 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
+      "name": "OldwindmilltopUpdateTick"
+    },
+    "onRandomUpdateEvent": {
       "name": "OldwindmilltopUpdateTick"
     },
     "spawnWorldTypes": [],

@@ -42,9 +42,11 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.Minecraft;
 
 import net.mcreator.sustanabilityproject.world.inventory.WindmillGuiMenu;
 import net.mcreator.sustanabilityproject.procedures.OldwindmillbottomUpdateTickProcedure;
+import net.mcreator.sustanabilityproject.procedures.OldwindmillbottomOnBlockRightClickedProcedure;
 import net.mcreator.sustanabilityproject.init.SustanabilityProjectModBlocks;
 import net.mcreator.sustanabilityproject.block.entity.OldwindmillbottomBlockEntity;
 
@@ -137,6 +139,18 @@ public class OldwindmillbottomBlock extends Block
 		world.getBlockTicks().scheduleTick(pos, this, 10);
 	}
 
+	@OnlyIn(Dist.CLIENT)
+	@Override
+	public void animateTick(BlockState blockstate, Level world, BlockPos pos, Random random) {
+		super.animateTick(blockstate, world, pos, random);
+		Player entity = Minecraft.getInstance().player;
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+
+		OldwindmillbottomUpdateTickProcedure.execute(world, x, y, z);
+	}
+
 	@Override
 	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
 		super.use(blockstate, world, pos, entity, hand, hit);
@@ -153,6 +167,15 @@ public class OldwindmillbottomBlock extends Block
 				}
 			}, pos);
 		}
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		double hitX = hit.getLocation().x;
+		double hitY = hit.getLocation().y;
+		double hitZ = hit.getLocation().z;
+		Direction direction = hit.getDirection();
+
+		OldwindmillbottomOnBlockRightClickedProcedure.execute(entity);
 		return InteractionResult.SUCCESS;
 	}
 
