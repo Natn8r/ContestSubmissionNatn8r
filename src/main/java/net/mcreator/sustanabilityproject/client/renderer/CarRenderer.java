@@ -14,6 +14,6 @@ public class CarRenderer extends MobRenderer<CarEntity, Modelcar<CarEntity>> {
 
 	@Override
 	public ResourceLocation getTextureLocation(CarEntity entity) {
-		return new ResourceLocation("sustanability_project:textures/car.png");
+		return new ResourceLocation("sustanability_project:textures/carr.png");
 	}
 }

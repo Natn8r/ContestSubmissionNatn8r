@@ -21,6 +21,11 @@ public class Modelcar<T extends Entity> extends EntityModel<T> {
 				PartPose.offset(0.0F, 24.0F, 0.0F));
 
 		PartDefinition cube_r1 = bb_main.addOrReplaceChild("cube_r1",
+				CubeListBuilder.create().texOffs(3, 168).addBox(-14.0F, 5.75F, 20.475F, 28.0F, 11.0F, 1.0F,
+						new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(-5.0F, -27.5F, 13.5F, -2.7925F, 0.0F, 3.1416F));
+
+		PartDefinition cube_r2 = bb_main.addOrReplaceChild("cube_r2",
 				CubeListBuilder.create().texOffs(0, 61)
 						.addBox(-14.0F, -22.0F, 31.0F, 28.0F, 14.0F, 1.0F, new CubeDeformation(0.0F)).texOffs(61, 74)
 						.addBox(-14.0F, -22.0F, -27.0F, 28.0F, 14.0F, 1.0F, new CubeDeformation(0.0F)).texOffs(122, 90)
@@ -40,16 +45,11 @@ public class Modelcar<T extends Entity> extends EntityModel<T> {
 						.addBox(-17.0F, -14.0F, 10.0F, 2.0F, 12.0F, 12.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(-5.0F, 2.0F, 0.0F, -3.1416F, 0.0F, 3.1416F));
 
-		PartDefinition cube_r2 = bb_main.addOrReplaceChild("cube_r2",
+		PartDefinition cube_r3 = bb_main.addOrReplaceChild("cube_r3",
 				CubeListBuilder.create().texOffs(0, 4)
 						.addBox(-9.0F, -19.5F, 3.0F, 2.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)).texOffs(6, 4)
 						.addBox(-5.0F, -19.5F, 3.0F, 2.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(-5.0F, 2.0F, 0.0F, 2.6616F, 0.0F, -3.1416F));
-
-		PartDefinition cube_r3 = bb_main.addOrReplaceChild("cube_r3",
-				CubeListBuilder.create().texOffs(0, 76).addBox(-14.0F, 5.75F, 20.475F, 28.0F, 11.0F, 1.0F,
-						new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(-5.0F, -27.5F, 13.5F, -2.7925F, 0.0F, 3.1416F));
 
 		return LayerDefinition.create(meshdefinition, 256, 256);
 	}

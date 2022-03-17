@@ -28,25 +28,25 @@ public class SustanabilityProjectModItems {
 	private static final List<Item> REGISTRY = new ArrayList<>();
 	public static final Item MODERN_WINDMILL_TOP = register(SustanabilityProjectModBlocks.MODERN_WINDMILL_TOP,
 			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
-	public static final Item OIL_BUCKET = register(new OilItem());
-	public static final Item OLDWINDMILLTOP_1 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_1,
-			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
-	public static final Item OLDWINDMILLTOP_2 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_2, null);
-	public static final Item OLD_WINDMILLTOP_3 = register(SustanabilityProjectModBlocks.OLD_WINDMILLTOP_3, null);
-	public static final Item OLDWINDMILLTOP_4 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_4, null);
-	public static final Item OLDWINDMILLBOTTOM = register(SustanabilityProjectModBlocks.OLDWINDMILLBOTTOM,
-			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
-	public static final Item OLD_WINDMILL_MIDDLE = register(SustanabilityProjectModBlocks.OLD_WINDMILL_MIDDLE,
-			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
 	public static final Item MODERN_WINDMILL_BASE = register(SustanabilityProjectModBlocks.MODERN_WINDMILL_BASE,
 			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
 	public static final Item MODERN_WINDMILL_MIDDLE = register(SustanabilityProjectModBlocks.MODERN_WINDMILL_MIDDLE,
 			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
+	public static final Item OLDWINDMILLTOP_1 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_1,
+			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
+	public static final Item OLDWINDMILLBOTTOM = register(SustanabilityProjectModBlocks.OLDWINDMILLBOTTOM,
+			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
+	public static final Item OLD_WINDMILL_MIDDLE = register(SustanabilityProjectModBlocks.OLD_WINDMILL_MIDDLE,
+			SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
+	public static final Item OIL_BUCKET = register(new OilItem());
 	public static final Item SMALL_BATTERY = register(new SmallBatteryItem());
 	public static final Item BATTERY = register(new BatteryItem());
 	public static final Item INDUSTRIAL_BATTERY = register(new IndustrialBatteryItem());
 	public static final Item DRILL = register(new DrillItem());
 	public static final Item CAR_SPAWN_ITEM = register(new CarSpawnItemItem());
+	public static final Item OLDWINDMILLTOP_2 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_2, null);
+	public static final Item OLD_WINDMILLTOP_3 = register(SustanabilityProjectModBlocks.OLD_WINDMILLTOP_3, null);
+	public static final Item OLDWINDMILLTOP_4 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_4, null);
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);
