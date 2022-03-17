@@ -3,6 +3,6 @@
   "textures": {
     "all": "sustanability_project:blocks/modernwindmillbasetexture",
     "particle": "sustanability_project:blocks/modernwindmillbasetexture",
-    "0": "sustanability_project:blocks/modernwindmillbasetexture"
+    "1": "sustanability_project:blocks/modernwindmillbasetexture"
   }
 }

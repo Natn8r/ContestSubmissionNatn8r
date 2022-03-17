@@ -387,155 +387,12 @@
       "registry_name": "evironmental_mod_tab"
     },
     {
-      "name": "ModernWindmillBase",
-      "type": "block",
-      "sortid": 17,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "modern_windmill_base"
-    },
-    {
-      "name": "WindMill",
-      "type": "item",
-      "sortid": 18,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "wind_mill"
-    },
-    {
       "name": "ModernWindmillTop",
       "type": "block",
       "sortid": 19,
       "compiles": true,
       "locked_code": false,
       "registry_name": "modern_windmill_top"
-    },
-    {
-      "name": "WindMillRightClickedOnBlock",
-      "type": "procedure",
-      "sortid": 22,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "wind_mill_right_clicked_on_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "ModernWindmillBaseUpdateTick",
-      "type": "procedure",
-      "sortid": 23,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "modern_windmill_base_update_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "ModernWindmillTopUpdateTick",
-      "type": "procedure",
-      "sortid": 24,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "modern_windmill_top_update_tick",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
-      "name": "ModernWindmillTopBlockDestroyedByPlayer",
-      "type": "procedure",
-      "sortid": 25,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "modern_windmill_top_block_destroyed_by_player",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "ModernWindmillBaseBlockDestroyedByPlayer",
-      "type": "procedure",
-      "sortid": 26,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "modern_windmill_base_block_destroyed_by_player",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
     },
     {
       "name": "Oil",
@@ -844,20 +701,228 @@
       }
     },
     {
-      "name": "OldWindMillItem",
-      "type": "item",
-      "sortid": 44,
+      "name": "OldwindmillbottomOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 46,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "old_wind_mill_item"
+      "registry_name": "oldwindmillbottom_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     },
     {
-      "name": "OldWindMillItemRightClickedOnBlock",
-      "type": "procedure",
-      "sortid": 45,
+      "name": "OldWindmillMiddle",
+      "type": "block",
+      "sortid": 47,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "old_wind_mill_item_right_clicked_on_block",
+      "registry_name": "old_windmill_middle"
+    },
+    {
+      "name": "ModernWindmillBase",
+      "type": "block",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "modern_windmill_base"
+    },
+    {
+      "name": "ModernWindmillMiddle",
+      "type": "block",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "modern_windmill_middle"
+    },
+    {
+      "name": "ModernWindmillBaseUpdateTick",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "modern_windmill_base_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SmallBattery",
+      "type": "item",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "small_battery"
+    },
+    {
+      "name": "SmallBatteryItemIsCraftedsmelted",
+      "type": "procedure",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "small_battery_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Battery",
+      "type": "item",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "battery"
+    },
+    {
+      "name": "BatteryItemIsCraftedsmelted",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "battery_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "IndustrialBattery",
+      "type": "item",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "industrial_battery"
+    },
+    {
+      "name": "IndustrialBatteryItemIsCraftedsmelted",
+      "type": "procedure",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "industrial_battery_item_is_craftedsmelted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OnRefuelButtonClickedWindmillGui",
+      "type": "procedure",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_refuel_button_clicked_windmill_gui",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SmallBatteryCraftingRecipie",
+      "type": "recipe",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "small_battery_crafting_recipie"
+    },
+    {
+      "name": "BatteryRecipie",
+      "type": "recipe",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "battery_recipie"
+    },
+    {
+      "name": "IndustrialBatteryRecipie",
+      "type": "recipe",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "industrial_battery_recipie"
+    },
+    {
+      "name": "BatteryIsCrafted",
+      "type": "procedure",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "battery_is_crafted",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Drill",
+      "type": "tool",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drill"
+    },
+    {
+      "name": "Car",
+      "type": "livingentity",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "car"
+    },
+    {
+      "name": "CarSpawnItemRightClickedInAir",
+      "type": "procedure",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "car_spawn_item_right_clicked_in_air",
       "metadata": {
         "dependencies": [
           {
@@ -884,20 +949,12 @@
       }
     },
     {
-      "name": "OldwindmillbottomOnBlockRightClicked",
-      "type": "procedure",
-      "sortid": 46,
+      "name": "CarSpawnItem",
+      "type": "item",
+      "sortid": 63,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "oldwindmillbottom_on_block_right_clicked",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
+      "registry_name": "car_spawn_item"
     }
   ],
   "variable_elements": [
@@ -923,19 +980,26 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "entity.sustanability_project.car": "Car",
       "fluid.sustanability_project.oil": "Oil",
+      "block.sustanability_project.modern_windmill_middle": "Iron Windmill Middle",
       "block.sustanability_project.old_windmilltop_3": "Oldwindmilltop 1",
-      "block.sustanability_project.oldwindmilltop_1": "Oldwindmilltop 1",
-      "block.sustanability_project.modern_windmill_base": "Modern Windmill Base",
+      "block.sustanability_project.oldwindmilltop_1": "Wood Windmill Top",
       "block.sustanability_project.oldwindmillbottom": "Oldwindmillbottom",
+      "block.sustanability_project.modern_windmill_base": "Iron Windmill Base",
+      "item.sustanability_project.industrial_battery": "Industrial Battery",
       "block.sustanability_project.oldwindmilltop_2": "Oldwindmilltop 1",
       "itemGroup.tabevironmental_mod_tab": "The Evironmental Mod",
+      "item.sustanability_project.small_battery": "Small Battery",
       "block.sustanability_project.oldwindmilltop_4": "Oldwindmilltop 1",
-      "item.sustanability_project.old_wind_mill_item": "Modern Wind Mill",
+      "item.sustanability_project.car_spawn_item": "Car",
       "block.sustanability_project.oil": "Oil",
-      "item.sustanability_project.wind_mill": "Modern Wind Mill",
+      "item.sustanability_project.car_spawn_egg": "Car Spawn Egg",
       "item.sustanability_project.oil_bucket": "Oil Bucket",
-      "block.sustanability_project.modern_windmill_top": "Modern Windmill Top"
+      "block.sustanability_project.modern_windmill_top": "Iron Windmill Top",
+      "item.sustanability_project.battery": "Battery",
+      "block.sustanability_project.old_windmill_middle": "Old Windmill Middle",
+      "item.sustanability_project.drill": "Drill"
     }
   },
   "foldersRoot": {
@@ -956,6 +1020,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.17.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.sustanabilityproject",
     "lockBaseModFiles": false
   },

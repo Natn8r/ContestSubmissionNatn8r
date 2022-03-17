@@ -22,7 +22,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.Containers;
 import net.minecraft.server.level.ServerLevel;
@@ -30,7 +29,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.Minecraft;
 
 import net.mcreator.sustanabilityproject.procedures.OldwindmilltopUpdateTickProcedure;
 import net.mcreator.sustanabilityproject.init.SustanabilityProjectModBlocks;
@@ -87,7 +85,7 @@ public class Oldwindmilltop4Block extends Block
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
-		return Collections.singletonList(new ItemStack(this, 1));
+		return Collections.singletonList(new ItemStack(SustanabilityProjectModBlocks.OLDWINDMILLTOP_1));
 	}
 
 	@Override
@@ -105,18 +103,6 @@ public class Oldwindmilltop4Block extends Block
 
 		OldwindmilltopUpdateTickProcedure.execute(world, x, y, z);
 		world.getBlockTicks().scheduleTick(pos, this, 10);
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	@Override
-	public void animateTick(BlockState blockstate, Level world, BlockPos pos, Random random) {
-		super.animateTick(blockstate, world, pos, random);
-		Player entity = Minecraft.getInstance().player;
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-
-		OldwindmilltopUpdateTickProcedure.execute(world, x, y, z);
 	}
 
 	@Override

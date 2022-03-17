@@ -1,0 +1,7 @@
+{
+  "parent": "sustanability_project:custom/drill",
+  "textures": {
+    "0": "sustanability_project:blocks/drill",
+    "particle": "sustanability_project:items/texture"
+  }
+}

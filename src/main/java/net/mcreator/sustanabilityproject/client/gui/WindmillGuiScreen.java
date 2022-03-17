@@ -6,12 +6,16 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.sustanabilityproject.world.inventory.WindmillGuiMenu;
+import net.mcreator.sustanabilityproject.network.WindmillGuiButtonMessage;
+import net.mcreator.sustanabilityproject.SustanabilityProjectMod;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -28,8 +32,8 @@ public class WindmillGuiScreen extends AbstractContainerScreen<WindmillGuiMenu> 
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 176;
-		this.imageHeight = 166;
+		this.imageWidth = 178;
+		this.imageHeight = 190;
 	}
 
 	private static final ResourceLocation texture = new ResourceLocation("sustanability_project:textures/windmill_gui.png");
@@ -67,8 +71,8 @@ public class WindmillGuiScreen extends AbstractContainerScreen<WindmillGuiMenu> 
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Energy: Level:", 45, 3, -16616192);
-		this.font.draw(poseStack, "Battery Refuel", 45, 43, -16023552);
+		this.font.draw(poseStack, "Energy: Level:", 54, 7, -16616192);
+		this.font.draw(poseStack, "Battery Refuel", 54, 39, -16023552);
 		this.font.draw(poseStack, "" + (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				BlockEntity BlockEntity = world.getBlockEntity(pos);
@@ -76,7 +80,7 @@ public class WindmillGuiScreen extends AbstractContainerScreen<WindmillGuiMenu> 
 					return BlockEntity.getTileData().getDouble(tag);
 				return 0;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "windenergy")) + "", 60, 19, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "windenergy")) + "", 61, 23, -12829636);
 	}
 
 	@Override
@@ -89,5 +93,11 @@ public class WindmillGuiScreen extends AbstractContainerScreen<WindmillGuiMenu> 
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
+		this.addRenderableWidget(new Button(this.leftPos + 46, this.topPos + 79, 77, 20, new TextComponent("Reenergize"), e -> {
+			if (true) {
+				SustanabilityProjectMod.PACKET_HANDLER.sendToServer(new WindmillGuiButtonMessage(0, x, y, z));
+				WindmillGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		}));
 	}
 }

@@ -3,9 +3,7 @@ package net.mcreator.sustanabilityproject.procedures;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
@@ -15,13 +13,9 @@ import java.util.Map;
 
 public class OldwindmilltopUpdateTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if (!(SustanabilityProjectModBlocks.OLDWINDMILLBOTTOM == (world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z))).getBlock())) {
-			if (world instanceof Level) {
-				Block.dropResources(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), (Level) world,
-						new BlockPos((int) x, (int) y, (int) z));
-				world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
-			}
-		} else {
+		if (SustanabilityProjectModBlocks.OLD_WINDMILL_MIDDLE == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock()
+				&& SustanabilityProjectModBlocks.OLDWINDMILLBOTTOM == (world.getBlockState(new BlockPos((int) x, (int) (y - 2), (int) z)))
+						.getBlock()) {
 			if ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == SustanabilityProjectModBlocks.OLDWINDMILLTOP_1) {
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);

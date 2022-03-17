@@ -1,6 +1,7 @@
 
 package net.mcreator.sustanabilityproject.block;
 
+import net.minecraftforge.fmllegacy.network.NetworkHooks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -8,38 +9,37 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.Direction;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.Minecraft;
 
+import net.mcreator.sustanabilityproject.world.inventory.WindmillGuiMenu;
 import net.mcreator.sustanabilityproject.procedures.ModernWindmillBaseUpdateTickProcedure;
-import net.mcreator.sustanabilityproject.procedures.ModernWindmillBaseBlockDestroyedByPlayerProcedure;
-import net.mcreator.sustanabilityproject.init.SustanabilityProjectModItems;
 import net.mcreator.sustanabilityproject.init.SustanabilityProjectModBlocks;
 import net.mcreator.sustanabilityproject.block.entity.ModernWindmillBaseBlockEntity;
 
@@ -47,16 +47,15 @@ import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
+import io.netty.buffer.Unpooled;
+
 public class ModernWindmillBaseBlock extends Block
 		implements
 
 			EntityBlock {
-	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-
 	public ModernWindmillBaseBlock() {
-		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(1f, 10f).noOcclusion()
+		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops().noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 		setRegistryName("modern_windmill_base");
 	}
 
@@ -73,36 +72,14 @@ public class ModernWindmillBaseBlock extends Block
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		Vec3 offset = state.getOffset(world, pos);
-		switch ((Direction) state.getValue(FACING)) {
-			case SOUTH :
-			default :
-				return Shapes.or(box(1, 0, 1, 15, 2, 15), box(6, 2, 6, 10, 33, 10)).move(offset.x, offset.y, offset.z);
-			case NORTH :
-				return Shapes.or(box(1, 0, 1, 15, 2, 15), box(6, 2, 6, 10, 33, 10)).move(offset.x, offset.y, offset.z);
-			case EAST :
-				return Shapes.or(box(1, 0, 1, 15, 2, 15), box(6, 2, 6, 10, 33, 10)).move(offset.x, offset.y, offset.z);
-			case WEST :
-				return Shapes.or(box(1, 0, 1, 15, 2, 15), box(6, 2, 6, 10, 33, 10)).move(offset.x, offset.y, offset.z);
-		}
+		return Shapes.or(box(6, 0, 6, 10, 16, 10), box(1, 0, 1, 15, 2, 15)).move(offset.x, offset.y, offset.z);
 	}
 
 	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING);
-	}
-
-	public BlockState rotate(BlockState state, Rotation rot) {
-		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
-	}
-
-	public BlockState mirror(BlockState state, Mirror mirrorIn) {
-		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
-	}
-
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		;
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+	public boolean canHarvestBlock(BlockState state, BlockGetter world, BlockPos pos, Player player) {
+		if (player.getInventory().getSelected().getItem()instanceof TieredItem tieredItem)
+			return tieredItem.getTier().getLevel() >= 1;
+		return false;
 	}
 
 	@Override
@@ -110,7 +87,7 @@ public class ModernWindmillBaseBlock extends Block
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
-		return Collections.singletonList(new ItemStack(SustanabilityProjectModItems.WIND_MILL));
+		return Collections.singletonList(new ItemStack(this, 1));
 	}
 
 	@Override
@@ -130,23 +107,23 @@ public class ModernWindmillBaseBlock extends Block
 		world.getBlockTicks().scheduleTick(pos, this, 10);
 	}
 
-	@OnlyIn(Dist.CLIENT)
 	@Override
-	public void animateTick(BlockState blockstate, Level world, BlockPos pos, Random random) {
-		super.animateTick(blockstate, world, pos, random);
-		Player entity = Minecraft.getInstance().player;
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
+	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
+		super.use(blockstate, world, pos, entity, hand, hit);
+		if (entity instanceof ServerPlayer player) {
+			NetworkHooks.openGui(player, new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return new TextComponent("Iron Windmill Base");
+				}
 
-		ModernWindmillBaseUpdateTickProcedure.execute(world, x, y, z);
-	}
-
-	@Override
-	public boolean removedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
-		boolean retval = super.removedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		ModernWindmillBaseBlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
-		return retval;
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					return new WindmillGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
+				}
+			}, pos);
+		}
+		return InteractionResult.SUCCESS;
 	}
 
 	@Override

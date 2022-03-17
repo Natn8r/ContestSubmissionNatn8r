@@ -25,8 +25,6 @@ import java.util.ArrayList;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SustanabilityProjectModBlockEntities {
 	private static final List<BlockEntityType<?>> REGISTRY = new ArrayList<>();
-	public static final BlockEntityType<?> MODERN_WINDMILL_BASE = register("sustanability_project:modern_windmill_base",
-			SustanabilityProjectModBlocks.MODERN_WINDMILL_BASE, ModernWindmillBaseBlockEntity::new);
 	public static final BlockEntityType<?> MODERN_WINDMILL_TOP = register("sustanability_project:modern_windmill_top",
 			SustanabilityProjectModBlocks.MODERN_WINDMILL_TOP, ModernWindmillTopBlockEntity::new);
 	public static final BlockEntityType<?> OLDWINDMILLTOP_1 = register("sustanability_project:oldwindmilltop_1",
@@ -39,6 +37,8 @@ public class SustanabilityProjectModBlockEntities {
 			SustanabilityProjectModBlocks.OLDWINDMILLTOP_4, Oldwindmilltop4BlockEntity::new);
 	public static final BlockEntityType<?> OLDWINDMILLBOTTOM = register("sustanability_project:oldwindmillbottom",
 			SustanabilityProjectModBlocks.OLDWINDMILLBOTTOM, OldwindmillbottomBlockEntity::new);
+	public static final BlockEntityType<?> MODERN_WINDMILL_BASE = register("sustanability_project:modern_windmill_base",
+			SustanabilityProjectModBlocks.MODERN_WINDMILL_BASE, ModernWindmillBaseBlockEntity::new);
 
 	private static BlockEntityType<?> register(String registryname, Block block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		BlockEntityType<?> blockEntityType = BlockEntityType.Builder.of(supplier, block).build(null).setRegistryName(registryname);

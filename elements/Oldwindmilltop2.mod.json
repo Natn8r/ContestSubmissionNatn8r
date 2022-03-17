@@ -43,7 +43,7 @@
     },
     "destroyTool": "Not specified",
     "customDrop": {
-      "value": ""
+      "value": "CUSTOM:Oldwindmilltop1"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -122,9 +122,6 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
-      "name": "OldwindmilltopUpdateTick"
-    },
-    "onRandomUpdateEvent": {
       "name": "OldwindmilltopUpdateTick"
     },
     "spawnWorldTypes": [],

@@ -16,7 +16,7 @@
     "itemTexture": "",
     "particleTexture": "",
     "tintType": "No tint",
-    "isItemTinted": true,
+    "isItemTinted": false,
     "hasTransparency": true,
     "connectedSides": false,
     "transparencyType": "SOLID",
@@ -32,14 +32,14 @@
         "subtract": false
       }
     ],
-    "name": "Modern Windmill Top",
+    "name": "Iron Windmill Top",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "CUSTOM:EvironmentalModTab"
     },
     "destroyTool": "Not specified",
     "customDrop": {
@@ -121,15 +121,6 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onTickUpdate": {
-      "name": "ModernWindmillTopUpdateTick"
-    },
-    "onRandomUpdateEvent": {
-      "name": "ModernWindmillTopUpdateTick"
-    },
-    "onDestroyedByPlayer": {
-      "name": "ModernWindmillTopBlockDestroyedByPlayer"
-    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

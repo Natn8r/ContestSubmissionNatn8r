@@ -3,10 +3,10 @@
   "_type": "gui",
   "definition": {
     "type": 1,
-    "width": 176,
-    "height": 166,
+    "width": 178,
+    "height": 190,
     "inventoryOffsetX": 0,
-    "inventoryOffsetY": 0,
+    "inventoryOffsetY": 13,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
@@ -19,8 +19,8 @@
             "falpha": 0.0
           },
           "name": "Energy: Level:",
-          "x": 171,
-          "y": 40
+          "x": 179,
+          "y": 32
         }
       },
       {
@@ -34,7 +34,7 @@
           "dropItemsWhenNotBound": true,
           "name": "Slot #0",
           "x": 201,
-          "y": 96
+          "y": 80
         }
       },
       {
@@ -46,8 +46,8 @@
             "falpha": 0.0
           },
           "name": "Battery Refuel",
-          "x": 171,
-          "y": 80
+          "x": 179,
+          "y": 64
         }
       },
       {
@@ -60,7 +60,21 @@
           },
           "name": "<BNBT:number:windenergy>",
           "x": 186,
-          "y": 56
+          "y": 48
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Reenergize",
+          "onClick": {
+            "name": "OnRefuelButtonClickedWindmillGui"
+          },
+          "width": 77,
+          "height": 20,
+          "name": "Reenergize",
+          "x": 171,
+          "y": 104
         }
       }
     ],

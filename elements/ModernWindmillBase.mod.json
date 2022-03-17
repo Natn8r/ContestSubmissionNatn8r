@@ -10,7 +10,7 @@
     "textureBack": "",
     "renderType": 2,
     "customModelName": "modernwindmillbase:default",
-    "rotationMode": 1,
+    "rotationMode": 0,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "",
@@ -23,6 +23,15 @@
     "disableOffset": false,
     "boundingBoxes": [
       {
+        "mx": 6.0,
+        "my": 0.0,
+        "mz": 6.0,
+        "Mx": 10.0,
+        "My": 16.0,
+        "Mz": 10.0,
+        "subtract": false
+      },
+      {
         "mx": 1.0,
         "my": 0.0,
         "mz": 1.0,
@@ -30,29 +39,20 @@
         "My": 2.0,
         "Mz": 15.0,
         "subtract": false
-      },
-      {
-        "mx": 6.0,
-        "my": 2.0,
-        "mz": 6.0,
-        "Mx": 10.0,
-        "My": 33.0,
-        "Mz": 10.0,
-        "subtract": false
       }
     ],
-    "name": "Modern Windmill Base",
+    "name": "Iron Windmill Base",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "CUSTOM:EvironmentalModTab"
     },
-    "destroyTool": "Not specified",
+    "destroyTool": "pickaxe",
     "customDrop": {
-      "value": "CUSTOM:WindMill"
+      "value": ""
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -114,30 +114,26 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "<NONE>",
-    "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "guiBoundTo": "WindmillGui",
+    "openGUIOnRightClick": true,
+    "inventorySize": 1,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
     "inventoryOutSlotIDs": [],
-    "inventoryInSlotIDs": [],
+    "inventoryInSlotIDs": [
+      0
+    ],
     "hasEnergyStorage": false,
     "energyInitial": 0,
     "energyCapacity": 400000,
-    "energyMaxReceive": 0,
+    "energyMaxReceive": 200,
     "energyMaxExtract": 200,
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
       "name": "ModernWindmillBaseUpdateTick"
-    },
-    "onRandomUpdateEvent": {
-      "name": "ModernWindmillBaseUpdateTick"
-    },
-    "onDestroyedByPlayer": {
-      "name": "ModernWindmillBaseBlockDestroyedByPlayer"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

@@ -99,7 +99,7 @@ public class Oldwindmilltop1BlockEntity extends RandomizableContainerBlockEntity
 
 	@Override
 	public Component getDisplayName() {
-		return new TextComponent("Oldwindmilltop 1");
+		return new TextComponent("Wood Windmill Top");
 	}
 
 	@Override

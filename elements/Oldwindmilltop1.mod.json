@@ -32,14 +32,14 @@
         "subtract": false
       }
     ],
-    "name": "Oldwindmilltop 1",
+    "name": "Wood Windmill Top",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "CUSTOM:EvironmentalModTab"
     },
     "destroyTool": "Not specified",
     "customDrop": {
@@ -122,9 +122,6 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
-      "name": "OldwindmilltopUpdateTick"
-    },
-    "onRandomUpdateEvent": {
       "name": "OldwindmilltopUpdateTick"
     },
     "spawnWorldTypes": [],

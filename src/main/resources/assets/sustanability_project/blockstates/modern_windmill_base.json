@@ -1,19 +1,7 @@
 {
   "variants": {
-    "facing=north": {
+    "": {
       "model": "sustanability_project:block/modern_windmill_base"
-    },
-    "facing=east": {
-      "model": "sustanability_project:block/modern_windmill_base",
-      "y": 90
-    },
-    "facing=south": {
-      "model": "sustanability_project:block/modern_windmill_base",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "sustanability_project:block/modern_windmill_base",
-      "y": 270
     }
   }
 }
