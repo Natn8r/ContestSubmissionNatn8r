@@ -20,21 +20,8 @@
           "width": 56,
           "height": 20,
           "name": "Refuel",
-          "x": 231,
-          "y": 44
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Current Fuel",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Current Fuel",
-          "x": 141,
-          "y": 53
+          "x": 186,
+          "y": 62
         }
       },
       {
@@ -47,21 +34,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #0",
-          "x": 249,
-          "y": 80
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<ENBT:integer:energy>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<ENBT:integer:energy>",
-          "x": 141,
-          "y": 71
+          "x": 204,
+          "y": 89
         }
       }
     ],

@@ -1,0 +1,8 @@
+{
+  "parent": "sustanability_project:custom/oil_pump1",
+  "textures": {
+    "all": "sustanability_project:blocks/oilpump1",
+    "particle": "sustanability_project:blocks/oilpump1",
+    "0": "sustanability_project:blocks/oilpump1"
+  }
+}

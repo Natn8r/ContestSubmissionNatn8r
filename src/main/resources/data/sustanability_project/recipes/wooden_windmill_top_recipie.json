@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:oak_log"
+    },
+    "1": {
+      "tag": "minecraft:wool"
+    },
+    "2": {
+      "item": "minecraft:oak_log"
+    },
+    "3": {
+      "tag": "minecraft:wool"
+    },
+    "4": {
+      "item": "sustanability_project:engine"
+    },
+    "5": {
+      "tag": "minecraft:wool"
+    },
+    "6": {
+      "item": "minecraft:oak_log"
+    },
+    "7": {
+      "tag": "minecraft:wool"
+    },
+    "8": {
+      "item": "minecraft:oak_log"
+    }
+  },
+  "result": {
+    "item": "sustanability_project:oldwindmilltop_1",
+    "count": 1
+  }
+}

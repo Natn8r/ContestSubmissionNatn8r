@@ -7,8 +7,8 @@
     "textureStill": "oilstand",
     "textureFlowing": "oilflow",
     "tintType": "No tint",
-    "canMultiply": false,
-    "flowRate": 30,
+    "canMultiply": true,
+    "flowRate": 15,
     "levelDecrease": 1,
     "slopeFindDistance": 4,
     "spawnParticles": false,
@@ -40,7 +40,7 @@
     "flammability": 30,
     "fireSpreadSpeed": 0,
     "colorOnMap": "BLACK",
-    "frequencyOnChunks": 6,
+    "frequencyOnChunks": 4,
     "spawnWorldTypes": [
       "Surface"
     ],

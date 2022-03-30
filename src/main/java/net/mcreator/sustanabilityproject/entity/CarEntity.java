@@ -43,6 +43,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.Direction;
 
 import net.mcreator.sustanabilityproject.world.inventory.VehicleGuiMenu;
+import net.mcreator.sustanabilityproject.procedures.CarOnEntityTickUpdateProcedure;
 import net.mcreator.sustanabilityproject.init.SustanabilityProjectModItems;
 import net.mcreator.sustanabilityproject.init.SustanabilityProjectModEntities;
 
@@ -175,6 +176,18 @@ public class CarEntity extends PathfinderMob {
 		super.mobInteract(sourceentity, hand);
 		sourceentity.startRiding(this);
 		return retval;
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level;
+
+		CarOnEntityTickUpdateProcedure.execute(world, x, y, z, entity);
 	}
 
 	@Override

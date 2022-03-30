@@ -11,11 +11,14 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.Block;
 
+import net.mcreator.sustanabilityproject.block.entity.SolarPanelBlockEntity;
 import net.mcreator.sustanabilityproject.block.entity.Oldwindmilltop4BlockEntity;
 import net.mcreator.sustanabilityproject.block.entity.Oldwindmilltop2BlockEntity;
 import net.mcreator.sustanabilityproject.block.entity.Oldwindmilltop1BlockEntity;
 import net.mcreator.sustanabilityproject.block.entity.OldwindmillbottomBlockEntity;
 import net.mcreator.sustanabilityproject.block.entity.OldWindmilltop3BlockEntity;
+import net.mcreator.sustanabilityproject.block.entity.OilPump2BlockEntity;
+import net.mcreator.sustanabilityproject.block.entity.OilPump1BlockEntity;
 import net.mcreator.sustanabilityproject.block.entity.ModernWindmillTopBlockEntity;
 import net.mcreator.sustanabilityproject.block.entity.ModernWindmillBaseBlockEntity;
 
@@ -33,12 +36,18 @@ public class SustanabilityProjectModBlockEntities {
 			SustanabilityProjectModBlocks.OLDWINDMILLTOP_1, Oldwindmilltop1BlockEntity::new);
 	public static final BlockEntityType<?> OLDWINDMILLBOTTOM = register("sustanability_project:oldwindmillbottom",
 			SustanabilityProjectModBlocks.OLDWINDMILLBOTTOM, OldwindmillbottomBlockEntity::new);
+	public static final BlockEntityType<?> OIL_PUMP_1 = register("sustanability_project:oil_pump_1", SustanabilityProjectModBlocks.OIL_PUMP_1,
+			OilPump1BlockEntity::new);
 	public static final BlockEntityType<?> OLDWINDMILLTOP_2 = register("sustanability_project:oldwindmilltop_2",
 			SustanabilityProjectModBlocks.OLDWINDMILLTOP_2, Oldwindmilltop2BlockEntity::new);
 	public static final BlockEntityType<?> OLD_WINDMILLTOP_3 = register("sustanability_project:old_windmilltop_3",
 			SustanabilityProjectModBlocks.OLD_WINDMILLTOP_3, OldWindmilltop3BlockEntity::new);
 	public static final BlockEntityType<?> OLDWINDMILLTOP_4 = register("sustanability_project:oldwindmilltop_4",
 			SustanabilityProjectModBlocks.OLDWINDMILLTOP_4, Oldwindmilltop4BlockEntity::new);
+	public static final BlockEntityType<?> OIL_PUMP_2 = register("sustanability_project:oil_pump_2", SustanabilityProjectModBlocks.OIL_PUMP_2,
+			OilPump2BlockEntity::new);
+	public static final BlockEntityType<?> SOLAR_PANEL = register("sustanability_project:solar_panel", SustanabilityProjectModBlocks.SOLAR_PANEL,
+			SolarPanelBlockEntity::new);
 
 	private static BlockEntityType<?> register(String registryname, Block block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		BlockEntityType<?> blockEntityType = BlockEntityType.Builder.of(supplier, block).build(null).setRegistryName(registryname);

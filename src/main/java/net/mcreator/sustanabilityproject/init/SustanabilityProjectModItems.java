@@ -14,8 +14,12 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.BlockItem;
 
 import net.mcreator.sustanabilityproject.item.SmallBatteryItem;
+import net.mcreator.sustanabilityproject.item.PlaneItemItem;
 import net.mcreator.sustanabilityproject.item.OilItem;
+import net.mcreator.sustanabilityproject.item.MotorcycleSpawnItemItem;
+import net.mcreator.sustanabilityproject.item.JerryCanItem;
 import net.mcreator.sustanabilityproject.item.IndustrialBatteryItem;
+import net.mcreator.sustanabilityproject.item.EngineItem;
 import net.mcreator.sustanabilityproject.item.DrillItem;
 import net.mcreator.sustanabilityproject.item.CarSpawnItemItem;
 import net.mcreator.sustanabilityproject.item.BatteryItem;
@@ -44,9 +48,16 @@ public class SustanabilityProjectModItems {
 	public static final Item INDUSTRIAL_BATTERY = register(new IndustrialBatteryItem());
 	public static final Item DRILL = register(new DrillItem());
 	public static final Item CAR_SPAWN_ITEM = register(new CarSpawnItemItem());
+	public static final Item MOTORCYCLE_SPAWN_ITEM = register(new MotorcycleSpawnItemItem());
+	public static final Item PLANE_ITEM = register(new PlaneItemItem());
+	public static final Item OIL_PUMP_1 = register(SustanabilityProjectModBlocks.OIL_PUMP_1, SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
+	public static final Item JERRY_CAN = register(new JerryCanItem());
 	public static final Item OLDWINDMILLTOP_2 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_2, null);
 	public static final Item OLD_WINDMILLTOP_3 = register(SustanabilityProjectModBlocks.OLD_WINDMILLTOP_3, null);
 	public static final Item OLDWINDMILLTOP_4 = register(SustanabilityProjectModBlocks.OLDWINDMILLTOP_4, null);
+	public static final Item OIL_PUMP_2 = register(SustanabilityProjectModBlocks.OIL_PUMP_2, null);
+	public static final Item ENGINE = register(new EngineItem());
+	public static final Item SOLAR_PANEL = register(SustanabilityProjectModBlocks.SOLAR_PANEL, SustanabilityProjectModTabs.TAB_EVIRONMENTAL_MOD_TAB);
 
 	private static Item register(Item item) {
 		REGISTRY.add(item);

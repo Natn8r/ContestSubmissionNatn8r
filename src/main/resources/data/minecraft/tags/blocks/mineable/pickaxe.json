@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "sustanability_project:modern_windmill_base",
-    "sustanability_project:modern_windmill_middle"
+    "sustanability_project:modern_windmill_middle",
+    "sustanability_project:solar_panel"
   ]
 }

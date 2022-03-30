@@ -14,6 +14,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 
 import net.mcreator.sustanabilityproject.world.inventory.WindmillGuiMenu;
 import net.mcreator.sustanabilityproject.world.inventory.VehicleGuiMenu;
+import net.mcreator.sustanabilityproject.world.inventory.OilGuiMenu;
 import net.mcreator.sustanabilityproject.world.inventory.Gui2Menu;
 import net.mcreator.sustanabilityproject.world.inventory.Gui1Menu;
 
@@ -29,6 +30,7 @@ public class SustanabilityProjectModMenus {
 			(id, inv, extraData) -> new WindmillGuiMenu(id, inv, extraData));
 	public static final MenuType<VehicleGuiMenu> VEHICLE_GUI = register("vehicle_gui",
 			(id, inv, extraData) -> new VehicleGuiMenu(id, inv, extraData));
+	public static final MenuType<OilGuiMenu> OIL_GUI = register("oil_gui", (id, inv, extraData) -> new OilGuiMenu(id, inv, extraData));
 
 	private static <T extends AbstractContainerMenu> MenuType<T> register(String registryname, IContainerFactory<T> containerFactory) {
 		MenuType<T> menuType = new MenuType<T>(containerFactory);

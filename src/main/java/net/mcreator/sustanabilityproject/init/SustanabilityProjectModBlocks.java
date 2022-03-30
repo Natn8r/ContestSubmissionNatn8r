@@ -12,12 +12,15 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
 
+import net.mcreator.sustanabilityproject.block.SolarPanelBlock;
 import net.mcreator.sustanabilityproject.block.Oldwindmilltop4Block;
 import net.mcreator.sustanabilityproject.block.Oldwindmilltop2Block;
 import net.mcreator.sustanabilityproject.block.Oldwindmilltop1Block;
 import net.mcreator.sustanabilityproject.block.OldwindmillbottomBlock;
 import net.mcreator.sustanabilityproject.block.OldWindmilltop3Block;
 import net.mcreator.sustanabilityproject.block.OldWindmillMiddleBlock;
+import net.mcreator.sustanabilityproject.block.OilPump2Block;
+import net.mcreator.sustanabilityproject.block.OilPump1Block;
 import net.mcreator.sustanabilityproject.block.OilBlock;
 import net.mcreator.sustanabilityproject.block.ModernWindmillTopBlock;
 import net.mcreator.sustanabilityproject.block.ModernWindmillMiddleBlock;
@@ -36,9 +39,12 @@ public class SustanabilityProjectModBlocks {
 	public static final Block OLDWINDMILLBOTTOM = register(new OldwindmillbottomBlock());
 	public static final Block OLD_WINDMILL_MIDDLE = register(new OldWindmillMiddleBlock());
 	public static final Block OIL = register(new OilBlock());
+	public static final Block OIL_PUMP_1 = register(new OilPump1Block());
 	public static final Block OLDWINDMILLTOP_2 = register(new Oldwindmilltop2Block());
 	public static final Block OLD_WINDMILLTOP_3 = register(new OldWindmilltop3Block());
 	public static final Block OLDWINDMILLTOP_4 = register(new Oldwindmilltop4Block());
+	public static final Block OIL_PUMP_2 = register(new OilPump2Block());
+	public static final Block SOLAR_PANEL = register(new SolarPanelBlock());
 
 	private static Block register(Block block) {
 		REGISTRY.add(block);
@@ -60,9 +66,12 @@ public class SustanabilityProjectModBlocks {
 			Oldwindmilltop1Block.registerRenderLayer();
 			OldwindmillbottomBlock.registerRenderLayer();
 			OldWindmillMiddleBlock.registerRenderLayer();
+			OilPump1Block.registerRenderLayer();
 			Oldwindmilltop2Block.registerRenderLayer();
 			OldWindmilltop3Block.registerRenderLayer();
 			Oldwindmilltop4Block.registerRenderLayer();
+			OilPump2Block.registerRenderLayer();
+			SolarPanelBlock.registerRenderLayer();
 		}
 	}
 }

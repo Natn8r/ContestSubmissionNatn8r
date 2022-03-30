@@ -64,7 +64,7 @@ public class VehicleGuiButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			CarRefuelProcedure.execute(entity);
+			CarRefuelProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

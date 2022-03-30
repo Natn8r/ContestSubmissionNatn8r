@@ -1,0 +1,15 @@
+{
+  "_fv": 24,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "N",
+    "keyBindingName": "Plane Down",
+    "keyBindingCategoryKey": "movement",
+    "onKeyPressed": {
+      "name": "PlaneDownOnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "PlaneDownOnKeyReleased"
+    }
+  }
+}

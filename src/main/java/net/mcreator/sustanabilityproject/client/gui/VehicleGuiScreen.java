@@ -69,8 +69,6 @@ public class VehicleGuiScreen extends AbstractContainerScreen<VehicleGuiMenu> {
 
 	@Override
 	protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
-		this.font.draw(poseStack, "Current Fuel", 15, 16, -12829636);
-		this.font.draw(poseStack, "" + ((int) entity.getPersistentData().getDouble("energy")) + "", 15, 34, -12829636);
 	}
 
 	@Override
@@ -83,7 +81,7 @@ public class VehicleGuiScreen extends AbstractContainerScreen<VehicleGuiMenu> {
 	public void init() {
 		super.init();
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
-		this.addRenderableWidget(new Button(this.leftPos + 105, this.topPos + 7, 56, 20, new TextComponent("Refuel"), e -> {
+		this.addRenderableWidget(new Button(this.leftPos + 60, this.topPos + 25, 56, 20, new TextComponent("Refuel"), e -> {
 			if (true) {
 				SustanabilityProjectMod.PACKET_HANDLER.sendToServer(new VehicleGuiButtonMessage(0, x, y, z));
 				VehicleGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);

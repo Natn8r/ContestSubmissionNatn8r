@@ -19,9 +19,7 @@ public abstract class OilFluid extends ForgeFlowingFluid {
 			() -> SustanabilityProjectModFluids.FLOWING_OIL, FluidAttributes.builder(new ResourceLocation("sustanability_project:blocks/oilstand"),
 					new ResourceLocation("sustanability_project:blocks/oilflow"))
 
-	).explosionResistance(100f)
-
-			.tickRate(30)
+	).explosionResistance(100f).canMultiply().tickRate(15)
 
 			.bucket(() -> SustanabilityProjectModItems.OIL_BUCKET).block(() -> (LiquidBlock) SustanabilityProjectModBlocks.OIL);
 

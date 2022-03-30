@@ -19,7 +19,7 @@ public class OilFeature extends LakeFeature {
 	public static final OilFeature FEATURE = (OilFeature) new OilFeature().setRegistryName("sustanability_project:oil");
 	public static final ConfiguredFeature<?, ?> CONFIGURED_FEATURE = FEATURE
 			.configured(new BlockStateConfiguration(SustanabilityProjectModBlocks.OIL.defaultBlockState()))
-			.rangeUniform(VerticalAnchor.aboveBottom(0), VerticalAnchor.belowTop(0)).squared().rarity(6);
+			.rangeUniform(VerticalAnchor.aboveBottom(0), VerticalAnchor.belowTop(0)).squared().rarity(4);
 	public static final Set<ResourceLocation> GENERATE_BIOMES = null;
 
 	public OilFeature() {

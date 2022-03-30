@@ -1,0 +1,52 @@
+{
+  "car-horn": {
+    "category": "block",
+    "subtitle": "subtitles.car-horn",
+    "sounds": [
+      {
+        "name": "sustanability_project:car-horn",
+        "stream": false
+      }
+    ]
+  },
+  "failed-ignition": {
+    "category": "block",
+    "subtitle": "subtitles.failed-ignition",
+    "sounds": [
+      {
+        "name": "sustanability_project:failed-ignition",
+        "stream": false
+      }
+    ]
+  },
+  "idle-car-loop": {
+    "category": "block",
+    "subtitle": "subtitles.idle-car-loop",
+    "sounds": [
+      {
+        "name": "sustanability_project:idle-car-loop",
+        "stream": false
+      }
+    ]
+  },
+  "car-ignition": {
+    "category": "block",
+    "subtitle": "subtitles.car-ignition",
+    "sounds": [
+      {
+        "name": "sustanability_project:ignition",
+        "stream": false
+      }
+    ]
+  },
+  "motorcycle-idle-loop": {
+    "category": "neutral",
+    "subtitle": "subtitles.motorcycle-idle-loop",
+    "sounds": [
+      {
+        "name": "sustanability_project:motorcycle-idle-loop",
+        "stream": false
+      }
+    ]
+  }
+}
