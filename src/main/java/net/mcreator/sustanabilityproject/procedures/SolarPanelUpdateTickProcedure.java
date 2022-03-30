@@ -37,7 +37,7 @@ public class SolarPanelUpdateTickProcedure {
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		}
-		if (6000 <= world.dayTime()) {
+		if (6000 >= world.dayTime()) {
 			if (Direction.WEST == (new Object() {
 				public Direction getDirection(BlockPos pos) {
 					BlockState _bs = world.getBlockState(pos);
@@ -65,7 +65,7 @@ public class SolarPanelUpdateTickProcedure {
 				}
 			}
 		}
-		if (6000 >= world.dayTime()) {
+		if (6000 <= world.dayTime()) {
 			if (Direction.EAST == (new Object() {
 				public Direction getDirection(BlockPos pos) {
 					BlockState _bs = world.getBlockState(pos);
