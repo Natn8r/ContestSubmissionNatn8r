@@ -1,37 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "IIR",
+    "EBE",
+    "III"
   ],
   "key": {
-    "0": {
+    "I": {
       "item": "minecraft:iron_ingot"
     },
-    "1": {
-      "item": "minecraft:iron_ingot"
-    },
-    "2": {
+    "R": {
       "item": "minecraft:iron_bars"
     },
-    "3": {
+    "E": {
       "item": "sustanability_project:engine"
     },
-    "4": {
+    "B": {
       "item": "sustanability_project:battery"
-    },
-    "5": {
-      "item": "sustanability_project:engine"
-    },
-    "6": {
-      "item": "minecraft:iron_ingot"
-    },
-    "7": {
-      "item": "minecraft:iron_ingot"
-    },
-    "8": {
-      "item": "minecraft:iron_ingot"
     }
   },
   "result": {

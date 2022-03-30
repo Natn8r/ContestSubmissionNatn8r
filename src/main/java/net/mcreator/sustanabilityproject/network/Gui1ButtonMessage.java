@@ -64,7 +64,7 @@ public class Gui1ButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			GuionenextclickedProcedure.execute(world, x, y, z, entity);
+			GuionenextclickedProcedure.execute(entity);
 		}
 	}
 

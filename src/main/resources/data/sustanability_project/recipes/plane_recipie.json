@@ -1,37 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "III",
+    "EEE",
+    "III"
   ],
   "key": {
-    "0": {
+    "I": {
       "item": "minecraft:iron_block"
     },
-    "1": {
-      "item": "minecraft:iron_block"
-    },
-    "2": {
-      "item": "minecraft:iron_block"
-    },
-    "3": {
+    "E": {
       "item": "sustanability_project:engine"
-    },
-    "4": {
-      "item": "sustanability_project:engine"
-    },
-    "5": {
-      "item": "sustanability_project:engine"
-    },
-    "6": {
-      "item": "minecraft:iron_block"
-    },
-    "7": {
-      "item": "minecraft:iron_block"
-    },
-    "8": {
-      "item": "minecraft:iron_block"
     }
   },
   "result": {

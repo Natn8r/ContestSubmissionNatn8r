@@ -1,25 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " 1 ",
-    "345",
-    " 7 "
+    " I ",
+    "ILI",
+    " I "
   ],
   "key": {
-    "1": {
+    "I": {
       "item": "minecraft:iron_ingot"
     },
-    "3": {
-      "item": "minecraft:iron_ingot"
-    },
-    "4": {
+    "L": {
       "item": "minecraft:lava_bucket"
-    },
-    "5": {
-      "item": "minecraft:iron_ingot"
-    },
-    "7": {
-      "item": "minecraft:iron_ingot"
     }
   },
   "result": {

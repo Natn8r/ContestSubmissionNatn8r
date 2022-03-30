@@ -38,13 +38,13 @@ public class SustanabilityProjectModBlocks {
 	public static final Block OLDWINDMILLTOP_1 = register(new Oldwindmilltop1Block());
 	public static final Block OLDWINDMILLBOTTOM = register(new OldwindmillbottomBlock());
 	public static final Block OLD_WINDMILL_MIDDLE = register(new OldWindmillMiddleBlock());
+	public static final Block SOLAR_PANEL = register(new SolarPanelBlock());
 	public static final Block OIL = register(new OilBlock());
 	public static final Block OIL_PUMP_1 = register(new OilPump1Block());
 	public static final Block OLDWINDMILLTOP_2 = register(new Oldwindmilltop2Block());
 	public static final Block OLD_WINDMILLTOP_3 = register(new OldWindmilltop3Block());
 	public static final Block OLDWINDMILLTOP_4 = register(new Oldwindmilltop4Block());
 	public static final Block OIL_PUMP_2 = register(new OilPump2Block());
-	public static final Block SOLAR_PANEL = register(new SolarPanelBlock());
 
 	private static Block register(Block block) {
 		REGISTRY.add(block);
@@ -66,12 +66,12 @@ public class SustanabilityProjectModBlocks {
 			Oldwindmilltop1Block.registerRenderLayer();
 			OldwindmillbottomBlock.registerRenderLayer();
 			OldWindmillMiddleBlock.registerRenderLayer();
+			SolarPanelBlock.registerRenderLayer();
 			OilPump1Block.registerRenderLayer();
 			Oldwindmilltop2Block.registerRenderLayer();
 			OldWindmilltop3Block.registerRenderLayer();
 			Oldwindmilltop4Block.registerRenderLayer();
 			OilPump2Block.registerRenderLayer();
-			SolarPanelBlock.registerRenderLayer();
 		}
 	}
 }

@@ -1,25 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " 1 ",
-    "345",
-    " 7 "
+    " I ",
+    "PBP",
+    " I "
   ],
   "key": {
-    "1": {
+    "I": {
       "item": "minecraft:iron_ingot"
     },
-    "3": {
+    "P": {
       "item": "minecraft:piston"
     },
-    "4": {
+    "B": {
       "item": "minecraft:bucket"
-    },
-    "5": {
-      "item": "minecraft:piston"
-    },
-    "7": {
-      "item": "minecraft:iron_ingot"
     }
   },
   "result": {
