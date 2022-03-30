@@ -1534,6 +1534,14 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "solar_panel_recipie"
+    },
+    {
+      "name": "Enginerecipie",
+      "type": "recipe",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enginerecipie"
     }
   ],
   "variable_elements": [
